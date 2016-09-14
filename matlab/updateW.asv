@@ -1,0 +1,28 @@
+function [W,sr,full_diag,Uz] = updateW(alpha,k,initW,gamma,max_W_iter)
+
+W = initW;
+
+%debug info
+sr = zeros(maxIter,1);
+full_diag = zeros(n,maxIter);
+for iter = 1:max_W_iter,
+    
+    L = graph_laplacian(W);
+    %[U,~,~] = lansvd((L+1e-6*eye(n)),k,'S');
+    [U,S,~] = svd(L);
+    Uz = U;
+    dS = diag(S);
+    sr(iter) = sum(dS(end-k+1:end));
+    full_diag(:,iter) = dS;
+
+    g = U(:,end-k+1:end)*diag(ones(k,1))*U(:,end-k+1:end)';
+    dg = diag(g);
+    wg = (repmat(dg,1,n)+repmat(dg',n,1)-g-g')/2;
+    
+end
+
+function [L] = graph_laplacian(W)
+
+affinity = (abs(W) + abs(W'))/2;
+L = diag(sum(affinity,2)) - affinity;
+

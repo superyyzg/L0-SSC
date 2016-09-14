@@ -1,0 +1,6 @@
+﻿  Compiling CUDA source file main.cu...
+  
+  C:\myprogram\l0graph\cuda\cuda-proximal-l0graph>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.0\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o x64\Debug\main.cu.obj "C:\myprogram\l0graph\cuda\cuda-proximal-l0graph\main.cu" 
+  main.cu
+C:/myprogram/l0graph/cuda/cuda-proximal-l0graph/main.cu(25): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+  cuda-proximal-l0graph.vcxproj -> C:\myprogram\l0graph\cuda\cuda-proximal-l0graph\x64\Debug\cuda-proximal-l0graph.exe
